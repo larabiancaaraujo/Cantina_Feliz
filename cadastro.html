@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Cantina Escolar</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        Cadastro - Cantina Escolar
+    </header>
+
+    <div class="form-container">
+        <h2>Registrar Aluno</h2>
+        <form id="cadastroForm">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="turma">Turma</label>
+                <select id="turma" name="turma" required>
+                    <option value="">Selecione a turma</option>
+                    <option value="1DS">1DS</option>
+                    <option value="1ADM">1ADM</option>
+                    <option value="2DS">2DS</option>
+                    <option value="2ADM">2ADM</option>
+                    <option value="2A">2A</option>
+                    <option value="3A">3A</option>
+                    <option value="3B">3B</option>
+                    <option value="3ADM">3ADM</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="alergias">Alergias/Observações</label>
+                <input type="text" id="alergias" name="alergias">
+            </div>
+
+            <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+        <p id="msgSucesso" class="msg-sucesso"></p>
+    </div>
+
+    <footer>
+        © 2025 Cantina Escolar - Todos os direitos reservados
+    </footer>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>
