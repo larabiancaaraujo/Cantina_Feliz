@@ -1,13 +1,41 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cantina Escolar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Arquivo CSS separado -->
 </head>
 <body>
-    <h1>alcymone</h1>
-    <h1>ramon</h1>
-    <h2>TESTANDO 321</h2>
-    <h1> NOVA TESTAGEM 444</h1>
+    <header>
+        Cantina Escolar
+    </header>
+
+    <div class="container">
+        <div class="card" onclick="window.location.href='cardapio.html'">
+            <i class="fas fa-utensils"></i>
+            <h3>Cardápio</h3>
+            <p>Confira o cardápio do dia e planeje suas refeições.</p>
+        </div>
+
+        <div class="card" onclick="window.location.href='registro.html'">
+            <i class="fas fa-clipboard-list"></i>
+            <h3>Registro de Almoço</h3>
+            <p>Registre o dia em que você vai almoçar na cantina.</p>
+        </div>
+
+        <div class="card" onclick="window.location.href='comidas_semana.html'">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Comidas da Semana</h3>
+            <p>Veja todas as opções de refeições disponíveis durante a semana.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Cantina Escolar - Todos os direitos reservados
+    </footer>
+
+    <script src="script.js"></script> <!-- Arquivo JS separado -->
 </body>
 </html>

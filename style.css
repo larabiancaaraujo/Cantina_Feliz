@@ -1,0 +1,70 @@
+body {
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    background-color: #fffbe6; /* Fundo amarelo claro */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(90deg, #ff8c42, #ffda6c); /* Laranja e amarelo */
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 20px;
+}
+
+.card {
+    background: linear-gradient(135deg, #ff9a76, #ffd56b); /* Degradê laranja/amarelo */
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    margin: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    flex: 1 1 250px;
+    max-width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    color: #3e3e3e;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.card i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #ff4c4c; /* Vermelho vibrante */
+}
+
+.card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95em;
+    color: #3e3e3e;
+}
+
+footer {
+    background: linear-gradient(90deg, #ff8c42, #ffda6c);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -3px 6px rgba(0,0,0,0.1);
+}
