@@ -1,0 +1,89 @@
+body {
+  font-family: 'Comic Sans MS', Arial, sans-serif;
+  background-color: #fffbe6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(90deg, #ff8c42, #ffda6c);
+  color: white;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+main {
+  padding: 40px 20px 80px;
+  text-align: center;
+}
+
+.refeicao-dia, .registro-form {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 500px;
+}
+
+h2 {
+  color: #ff8c42;
+  margin-bottom: 20px;
+}
+
+.cardapio p {
+  font-size: 1.1em;
+  color: #3e3e3e;
+  margin: 8px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+label {
+  font-size: 1em;
+  color: #333;
+}
+
+select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  width: 80%;
+  outline: none;
+}
+
+.botao-registrar {
+  background: linear-gradient(90deg, #ff8c42, #ffda6c);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-registrar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: linear-gradient(90deg, #ff8c42, #ffda6c);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 -3px 6px rgba(0,0,0,0.1);
+}
