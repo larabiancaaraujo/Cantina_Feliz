@@ -10,7 +10,7 @@ const cardapio = [
             "Sexta-feira: mungunzá."
         ],
         almocos: [
-            "Segunda-feira: arroz, picadinho de carne e sobremesa que eu levei.",
+            "Segunda-feira: arroz, picadinho de carne e sobremesa.",
             "Terça-feira: arroz, frango assado, feijão e salada.",
             "Quarta-feira: Maria Isabel de frango, feijão e salada.",
             "Quinta-feira: arroz, feijão preto, toscana e salada.",
