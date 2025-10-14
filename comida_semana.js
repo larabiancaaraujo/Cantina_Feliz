@@ -1,7 +1,7 @@
 const comidasSemana = {
     "Segunda-feira": {
         lanche: "Pão de forma com queijo (sanduíche) e suco",
-        almoco: "Arroz, picadinho de carne e sobremesa que o aluno levou"
+        almoco: "Arroz, picadinho de carne e sobremesa"
     },
     "Terça-feira": {
         lanche: "Torta de frango e suco",
