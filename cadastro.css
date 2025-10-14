@@ -17,7 +17,7 @@ header {
 
 .form-container {
     max-width: 500px;
-    margin: 50px auto;
+    margin: 15px auto;
     background: linear-gradient(135deg, #ff9a76, #ffd56b);
     padding: 30px 40px;
     border-radius: 15px;
@@ -90,4 +90,16 @@ footer {
     width: 100%;
     bottom: 0;
     box-shadow: 0 -3px 6px rgba(0,0,0,0.1);
+}
+/* Logo centralizada acima do título */
+.logo-cantina {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.logo-cantina img {
+    width: 200px;
+    height: auto;
+    
 }
