@@ -1,122 +1,51 @@
-// --- "Banco de dados" com todas as semanas e refeições ---
-const cardapioSemanas = {
-  1: {
-    lanches: {
-      segunda: "Pão de forma com queijo (sanduíche) e suco",
-      terca: "Torta de frango e suco",
-      quarta: "Pão com frango e suco",
-      quinta: "Bolo doce e suco",
-      sexta: "Mungunzá"
-    },
-    almocos: {
-      segunda: "Arroz, picadinho de carne e sobremesa que eu levei",
-      terca: "Arroz, frango assado, feijão e salada",
-      quarta: "Maria Isabel de frango, feijão e salada",
-      quinta: "Arroz, feijão preto, toscana e salada",
-      sexta: "Maria Isabel de frango, feijão e salada"
-    }
-  },
-  2: {
-    lanches: {
-      segunda: "Pão de forma com suco",
-      terca: "Creme de galinha",
-      quarta: "Pão com ovo e suco",
-      quinta: "Cuscuz com calabresa e café com leite",
-      sexta: "Pão com carne moída e suco ou vitamina"
-    },
-    almocos: {
-      segunda: "Arroz colorido, fio de frango, farofa e salada",
-      terca: "Arroz, feijão, bisteca, farofa e salada",
-      quarta: "Arroz, frango assado, feijão e salada",
-      quinta: "Arroz, picadinho de carne com legumes e sobremesa",
-      sexta: "Arroz, feijão, frango ao molho, macaxeira, farofa e salada"
-    }
-  },
-  3: {
-    lanches: {
-      segunda: "Pão de forma com queijo e suco",
-      terca: "Torta de frango, suco e barra vitamina",
-      quarta: "Pão com frango e suco",
-      quinta: "Bolo doce e suco",
-      sexta: "Mungunzá"
-    },
-    almocos: {
-      segunda: "Arroz, picadinho de carne com legumes e sobremesa",
-      terca: "Arroz colorido, filé de frango e farofa",
-      quarta: "Arroz, feijão preto, toscana e salada",
-      quinta: "Arroz, feijão, frango ao molho, macaxeira e salada",
-      sexta: "Strogonoff de frango, arroz e salada"
-    }
-  },
-  4: {
-    lanches: {
-      segunda: "Pão de forma com patê e suco",
-      terca: "Creme de galinha",
-      quarta: "Pão com ovo e suco",
-      quinta: "Cuscuz com calabresa e café com leite",
-      sexta: "Pão com carne moída e suco ou vitamina"
-    },
-    almocos: {
-      segunda: "Arroz, feijão, bisteca, farofa e salada",
-      terca: "Arroz, frango assado, feijão e salada",
-      quarta: "Arroz, feijão, bisteca, farofa e salada",
-      quinta: "Strogonoff de frango, arroz e salada",
-      sexta: "Arroz, frango assado, feijão, salada de pepino, cenoura e tomate"
-    }
-  }
-};
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Almoço - Cantina Escolar</title>
+  <link rel="stylesheet" href="registro_almoco.css">
+  <script src="registro_almoco.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-clipboard-list"></i> Registro de Almoço</h1>
+  </header>
 
-// --- Função que retorna a semana atual do mês (1 a 4) ---
-function getSemanaDoMes() {
-  const hoje = new Date();
-  const dia = hoje.getDate();
-  return Math.min(Math.ceil(dia / 7), 4); // Ex: 1 a 4
-}
+  <main>
+    <section class="refeicao-dia">
+      <h2>🍛 Refeições do Dia</h2>
+      <div class="cardapio" id="cardapio-dia">
+        <p>Carregando refeições...</p>
+      </div>
+    </section>
 
-// --- Função para exibir cardápio automático ---
-function mostrarCardapioDoDia() {
-  const dias = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
-  const hoje = new Date();
-  const diaSemana = dias[hoje.getDay()];
-  const semana = getSemanaDoMes();
-  const cardapioDiv = document.getElementById("cardapio-dia");
+    <section class="registro-form">
+      <h2>🍽️ Registrar Almoço</h2>
+      <form id="almocoForm">
+        <label for="comer"><strong>Você irá comer na escola?</strong></label>
+        <select id="comer" required>
+          <option value="">Selecione...</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
 
-  if (diaSemana === "sábado" || diaSemana === "domingo") {
-    cardapioDiv.innerHTML = "<p><strong>Hoje não há refeições. A cantina funciona de segunda a sexta.</strong></p>";
-    return;
-  }
+        <label for="acompanhamento"><strong>Escolher acompanhamento:</strong></label>
+        <select id="acompanhamento" required>
+          <option value="">Selecione uma opção...</option>
+          <option value="frango">Frango grelhado</option>
+          <option value="farofa">Farofa de ovo</option>
+          <option value="ovo">Ovo cozido</option>
+        </select>
 
-  const dadosSemana = cardapioSemanas[semana];
-  const lanche = dadosSemana.lanches[diaSemana];
-  const almoco = dadosSemana.almocos[diaSemana];
+        <button type="submit" class="botao-registrar">Registrar Almoço</button>
+      </form>
+    </section>
+  </main>
 
-  cardapioDiv.innerHTML = `
-    <h3>📅 Semana ${semana}</h3>
-    <p><strong>Lanche:</strong> ${lanche}</p>
-    <p><strong>Almoço:</strong> ${almoco}</p>
-  `;
-}
-
-// --- Registro do almoço ---
-document.getElementById("almocoForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const comer = document.getElementById("comer").value;
-  const acompanhamento = document.getElementById("acompanhamento").value;
-
-  if (!comer || !acompanhamento) {
-    alert("Por favor, preencha todas as informações antes de registrar.");
-    return;
-  }
-
-  if (comer === "sim") {
-    alert(`✅ Registro confirmado!\nVocê irá comer na escola com acompanhamento de ${acompanhamento}.`);
-  } else {
-    alert("❌ Registro feito! Você marcou que NÃO irá comer na escola hoje.");
-  }
-
-  document.getElementById("almocoForm").reset();
-});
-
-// --- Executa ao carregar ---
-window.onload = mostrarCardapioDoDia;
+  <footer>
+    © 2025 Cantina Escolar - Todos os direitos reservados
+  </footer>
+</body>
+</html>
