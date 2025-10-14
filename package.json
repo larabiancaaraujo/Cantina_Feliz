@@ -1,0 +1,17 @@
+{
+  "name": "cantina-escolar",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de cantina escolar com Node.js e SQLite",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "sqlite": "^5.1.6",
+    "sqlite3": "^5.1.7"
+  }
+}
+

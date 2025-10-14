@@ -1,23 +1,33 @@
 const form = document.getElementById('cadastroForm');
 const msgSucesso = document.getElementById('msgSucesso');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita o envio real do formulário
+form.addEventListener('submit', async function(e) {
+    e.preventDefault();
 
     const nome = document.getElementById('nome').value.trim();
-    const ra = document.getElementById('ra').value.trim(); // Alterado de email para RA
+    const ra = document.getElementById('ra').value.trim();
     const turma = document.getElementById('turma').value;
 
-    if(nome === '' || ra === '' || turma === '') {
-        alert('Por favor, preencha todos os campos obrigatórios.');
+    if (nome === '' || ra === '' || turma === '') {
+        alert('Preencha todos os campos obrigatórios.');
         return;
     }
 
-    // Aqui você poderia enviar os dados para o servidor via fetch/AJAX
-    // Para agora, vamos apenas mostrar uma mensagem de sucesso
-    msgSucesso.textContent = `Aluno ${nome} (RA: ${ra}) cadastrado com sucesso!`;
+    // Envia os dados para o servidor (SQLite)
+    const resposta = await fetch('/api/alunos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ra, nome, turma })
+    });
 
-    // Limpar o formulário
-    form.reset();
+    const resultado = await resposta.json();
+
+    if (resultado.success) {
+        msgSucesso.textContent = resultado.message;
+        msgSucesso.style.color = "green";
+        form.reset();
+    } else {
+        msgSucesso.textContent = resultado.message;
+        msgSucesso.style.color = "red";
+    }
 });
-
