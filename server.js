@@ -57,6 +57,9 @@ app.get("/api/alunos", async (req, res) => {
   res.json(alunos);
 });
 
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'home.html'));
 });
